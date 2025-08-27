@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fan Hotspots</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d4a5c3b3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h4>Fan Hotspots</h4>
+  <div class="sidebar-nav">
+    <a href="index.html">Home</a>
+    <a href="tickets.html">Tickets</a>
+    <a href="matchday.html">Travel & Access</a>
+    <a href="stadium.html">Stadium Guide</a>
+    <a href="fan.html">Fan Hotspots</a>
+    <a href="login.html">Login/Sign up</a>
+  </div>
+</div>
+
+
+<div class="fan-hotspots-header">
+  <h1>Fan Hotspots</h1>
+  <p class="subtitle">Find The Best Fan Hotspots</p>
+  <p class="subtitle">Interactive Map</p>
+</div>
+
+<div class="fan-hotspots-container">
+  <!-- Main Content Area -->
+  <div class="main-content d-flex flex-wrap">
+    <!-- Map in Center -->
+    <div class="map-container flex-grow-1" style="height: 500px; min-width: 60%;">
+      <div id="hotspots-map" style="height: 100%; width: 100%;"></div>
+    </div>
+
+    <!-- Filters + Info on the Right -->
+    <div class="filters-container" style="min-width: 35%; padding-left: 20px;">
+      <div class="filters-section mb-4">
+        <h4>Distance</h4>
+        <ul class="filter-options">
+          <li><input type="checkbox" class="distance-filter" value="within5"> Within 5 miles</li>
+          <li><input type="checkbox" class="distance-filter" value="5plus"> 5+ miles</li>
+        </ul>
+
+        <h4>Refreshments</h4>
+        <ul class="filter-options">
+          <li><input type="checkbox" class="refreshments-filter" value="restaurant"> Restaurant</li>
+          <li><input type="checkbox" class="refreshments-filter" value="drinks"> Drinks</li>
+        </ul>
+
+        <h4>Atmosphere & Experience</h4>
+        <ul class="filter-options">
+          <li><input type="checkbox" class="atmosphere-filter" value="lively"> Lively</li>
+          <li><input type="checkbox" class="atmosphere-filter" value="songs"> Songs & Entertainment</li>
+        </ul>
+
+        <h4>Home & Away Fans</h4>
+        <ul class="filter-options">
+          <li><input type="checkbox" class="fans-filter" value="home"> Home</li>
+          <li><input type="checkbox" class="fans-filter" value="away"> Away</li>
+        </ul>
+
+        <h4>Select By Rating</h4>
+        <select id="rating-filter" class="form-select">
+          <option value="">Select Rating</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+        </select>
+      </div>
+
+      <!-- Hotspot Info -->
+      <div class="hotspot-info">
+        <h4>Hotspot Info</h4>
+        <div class="info-box">
+          <h5 id="hotspot-name">Select a location</h5>
+          <p id="hotspot-rating"></p>
+          <p id="hotspot-hours"></p>
+          <p id="hotspot-distance"></p>
+          <p id="hotspot-specials"></p>
+          <button id="save-favorites" class="btn btn-primary">Save To Favourites</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast-message">Saved to favourites!</div>
+
+<script src="js/fanhotspots.js"></script>
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtU700_IIEuq-d_eNJuh-9S8x0i-IkuHo&callback=initMap">
+</script>
+</body>
+</html>
